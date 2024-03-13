@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el numero</title>
+</head>
+<body>
+    <h1>Adivina el numero aleatorio</h1>
+    <p>Estoy pensando un numero de 1 al 10. Te animás de descubrir cual es?</p>
+    <input type="number" id="Adivina_numero"/>
+    <button onclick="verificarAdivinanza()">Adivinar</button>
+    <p id="resultado"></p>
+    <script>
+        function verificarAdivinanza(){
+            const numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+            const numeroIngresado = parseInt(document.querySelector("#Adivina_numero").value);
+
+            if(numeroIngresado === numeroAleatorio){
+                document.querySelector("#resultado").innerHTML = "Felicidades!, lo adivinaste...";
+            } else {
+                document.querySelector("#resultado").innerHTML = "Lo siento, el numero era " + numeroAleatorio;
+
+            }
+                
+        }
+    </script>
+</body>
+</html>
